@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12:12:12</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="view">
+      <div id="idview">
+        <span></span>
+      </div>
+
+      <div class="digital-clock">
+        <div id="timerHour" class="number number--secs">
+          <div class="hold_cards">
+            <div class="card static_up"><span> </span></div>
+            <div class="card static_down"><span> </span></div>
+            <div class="card animate_up"><span> </span></div>
+            <div class="card animate_down"><span> </span></div>
+          </div>
+        </div>
+        <div id="timerMin" class="number number--secs">
+          <div class="hold_cards">
+            <div class="card static_up"><span> </span></div>
+            <div class="card static_down"><span> </span></div>
+            <div class="card animate_up"><span> </span></div>
+            <div class="card animate_down"><span> </span></div>
+          </div>
+        </div>
+        <div id="timerSec" class="number number--secs">
+          <div class="hold_cards">
+            <div class="card static_up"><span>56</span></div>
+            <div class="card static_down"><span>55</span></div>
+            <div class="card animate_up"><span>55</span></div>
+            <div class="card animate_down"><span>56</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="javascript:" onclick="openFullscreen()"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill="currentColor"
+          d="M3.75 3a.75.75 0 0 0-.75.75V5.5a.5.5 0 0 1-1 0V3.75C2 2.784 2.784 2 3.75 2H5.5a.5.5 0 0 1 0 1H3.75ZM10 2.5a.5.5 0 0 1 .5-.5h1.75c.966 0 1.75.784 1.75 1.75V5.5a.5.5 0 0 1-1 0V3.75a.75.75 0 0 0-.75-.75H10.5a.5.5 0 0 1-.5-.5ZM2.5 10a.5.5 0 0 1 .5.5v1.75c0 .414.336.75.75.75H5.5a.5.5 0 0 1 0 1H3.75A1.75 1.75 0 0 1 2 12.25V10.5a.5.5 0 0 1 .5-.5Zm11 0a.5.5 0 0 1 .5.5v1.75A1.75 1.75 0 0 1 12.25 14H10.5a.5.5 0 0 1 0-1h1.75a.75.75 0 0 0 .75-.75V10.5a.5.5 0 0 1 .5-.5Z"
+        /></svg
+    ></a>
+
+    <script src="timer.js"></script>
+    <script src="fullscream.js"></script>
+  </body>
+</html>

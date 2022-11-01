@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+body {
+  background-color: #000;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+}
+
+#view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+#view .digital-clock {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  gap: 40px;
+}
+#view .digital-clock .number {
+  position: relative;
+  width: 100%;
+  max-width: 28vw;
+}
+#view .digital-clock .number::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 99;
+  transform: translate(-50%, -50%);
+}
+#view .digital-clock .number .hold_cards {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+#view .digital-clock .number .hold_cards.animate .card.animate_up {
+  -webkit-animation: flipDown 0.9s normal forwards ease-in;
+          animation: flipDown 0.9s normal forwards ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+#view .digital-clock .number .hold_cards.animate .card.animate_down {
+  -webkit-animation: flipUp 0.9s normal forwards ease-out;
+          animation: flipUp 0.9s normal forwards ease-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+#view .digital-clock .number .hold_cards .card {
+  background-color: #444;
+  position: absolute;
+  width: 100%;
+  padding-top: 50%;
+  line-height: 1;
+  transform-origin: bottom;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  font-size: 100%;
+}
+#view .digital-clock .number .hold_cards .card span {
+  position: absolute;
+  font-size: 14rem;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#view .digital-clock .number .hold_cards .card.static_up {
+  top: 0;
+  border-radius: 10px 10px 0 0;
+}
+#view .digital-clock .number .hold_cards .card.static_up span {
+  top: 100%;
+}
+#view .digital-clock .number .hold_cards .card.static_down {
+  bottom: 0;
+  border-radius: 0 0 10px 10px;
+}
+#view .digital-clock .number .hold_cards .card.static_down span {
+  top: 0%;
+}
+#view .digital-clock .number .hold_cards .card.animate_up {
+  opacity: 0;
+  top: 0;
+  border-radius: 10px 10px 0 0;
+  z-index: 2;
+  box-shadow: 0px -30px 10px rgba(0, 0, 0, 0.7058823529);
+}
+#view .digital-clock .number .hold_cards .card.animate_up span {
+  top: 100%;
+}
+#view .digital-clock .number .hold_cards .card.animate_down {
+  bottom: 0;
+  transform-origin: top;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 30px 10px rgba(0, 0, 0, 0.3450980392);
+}
+#view .digital-clock .number .hold_cards .card.animate_down span {
+  top: 0%;
+}
+
+@-webkit-keyframes flipDown {
+  0% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(90deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes flipDown {
+  0% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(90deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+}
+@-webkit-keyframes flipUp {
+  0% {
+    transform: rotateX(90deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes flipUp {
+  0% {
+    transform: rotateX(90deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+body {
+  background-color: #000;
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+}
+#view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  .digital-clock {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+ 
+    gap: 40px;
+
+    .number {
+      position: relative;
+      width: 100%;
+      max-width: 28vw;
+
+      // &#timerSec {
+      //   max-width: 100px;
+
+      //   .hold_cards {
+      //     .card {
+      //       span {
+      //         font-size: 4rem;
+      //       }
+      //     }
+      //   }
+      // }
+
+      &::after {
+        content: "";
+        height: 2px;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 99;
+        transform: translate(-50%, -50%);
+      }
+
+      .hold_cards {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+        &.animate {
+          .card {
+            &.animate_up {
+              animation: flipDown 0.9s normal forwards ease-in;
+              animation-iteration-count: 1;
+            }
+            &.animate_down {
+              animation: flipUp 0.9s normal forwards ease-out;
+              animation-iteration-count: 1;
+            }
+          }
+        }
+        .card {
+          background-color: #444;
+          position: absolute;
+          width: 100%;
+          padding-top: 50%;
+          line-height: 1;
+          transform-origin: bottom;
+          transform-style: preserve-3d;
+          overflow: hidden;
+          font-size: 100%;
+          span {
+            position: absolute;
+            font-size: 14rem;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &.static_up {
+            // background-color: green;
+            top: 0;
+
+            border-radius: 10px 10px 0 0;
+            span {
+              top: 100%;
+            }
+          }
+          &.static_down {
+            // background-color: blue;
+            bottom: 0;
+
+            border-radius: 0 0 10px 10px;
+            span {
+              top: 0%;
+            }
+          }
+          &.animate_up {
+            // background-color: yellow;
+            opacity: 0;
+            top: 0;
+
+            border-radius: 10px 10px 0 0;
+
+            z-index: 2;
+            box-shadow: 0px -30px 10px #000000b4;
+            span {
+              top: 100%;
+            }
+          }
+          &.animate_down {
+            // background-color: red;
+            bottom: 0;
+
+            transform-origin: top;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 30px 10px #00000058;
+
+            span {
+              top: 0%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes flipDown {
+  0% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(90deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+}
+@keyframes flipUp {
+  0% {
+    transform: rotateX(90deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
