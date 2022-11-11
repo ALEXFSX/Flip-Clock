@@ -76,11 +76,14 @@
     <script>
       function toggleSecs(e) {
         var sec = document.getElementById("timerSec");
+        var relogio = document.getElementsByClassName("digital-clock");
 
         if (e.checked) {
           sec.style.display = "block";
+          relogio[0].classList.remove("noSec");
         } else {
           sec.style.display = "none";
+          relogio[0].classList.add("noSec");
         }
       }
     </script>

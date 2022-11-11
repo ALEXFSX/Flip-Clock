@@ -20,6 +20,12 @@ body {
   width: 100%;
   gap: 40px;
 }
+#view .digital-clock.noSec .number {
+  max-width: 45vw;
+}
+#view .digital-clock.noSec .number .hold_cards .card span {
+  font-size: 20rem;
+}
 #view .digital-clock .number {
   position: relative;
   width: 100%;

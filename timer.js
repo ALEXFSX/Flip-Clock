@@ -44,6 +44,10 @@ function time() {
   hLast = h;
   mLast = m;
   sLast = s;
+
+
+  document.title = h+':'+m+':'+s
+
 }
 
 setInterval(time, 1000);
